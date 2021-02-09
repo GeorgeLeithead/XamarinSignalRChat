@@ -76,17 +76,17 @@ Before you publish the back-end to Azure web sites, you need to change the src\M
 
 ```
 #if DEBUG
-		private static readonly string DefaultChatIP = DeviceInfo.Platform == DevicePlatform.Android ? "10.0.2.2" : "localhost"; // NOTE: 10.0.2.2 is the Android equivalent of localhost
+	private static readonly string DefaultChatIP = DeviceInfo.Platform == DevicePlatform.Android ? "10.0.2.2" : "localhost"; // NOTE: 10.0.2.2 is the Android equivalent of localhost
 #else
-		private static readonly string DefaultChatIP = "NAMEOFYOURPUBLISHEDAPPHERE.azurewebsites.net;
+	private static readonly string DefaultChatIP = "NAMEOFYOURPUBLISHEDAPPHERE.azurewebsites.net;
 #endif
 ```
 
 ## References
 This is all inspired from [James Montemagno's XamChat](https://github.com/jamesmontemagno/XamChat).
-- [Introduction to ASP.NET Core SignalR](https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-2.2&WT.mc_id=docs-github-jamont)
+- [Introduction to ASP.NET Core SignalR](https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction)
 - [What is Xamarin.Forms?](https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms)
-- [Xamarin.Essentials](https://docs.microsoft.com/en-us/xamarin/essentials/?context=xamarin/xamarin-forms)
+- [Xamarin.Essentials](https://docs.microsoft.com/en-us/xamarin/essentials/)
 - [Quick Tip: Debugging Local ASP.NET Core Web APIs on Android Emulators](https://devblogs.microsoft.com/xamarin/debug-local-asp-net-core-web-apis-android-emulators/)
 - [FlyMe Sample App](https://github.com/davidortinau/FlyMe)
 - [What is Azure Pipelines?](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines)
