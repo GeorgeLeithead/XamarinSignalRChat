@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+	x:Class="XamarinSignalRChat.Views.ChatModalPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:XamarinSignalRChat.Controls"
+	xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+	xmlns:helpers="clr-namespace:XamarinSignalRChat.Helpers"
+	xmlns:local="clr-namespace:XamarinSignalRChat"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:partials="clr-namespace:XamarinSignalRChat.Views.Partials"
+	xmlns:vm="clr-namespace:XamarinSignalRChat.ViewModels"
+	Title="{Binding Title, Mode=OneTime}"
+	Shell.NavBarIsVisible="True"
+	Shell.PresentationMode="Animated"
+	Visual="Material"
+	mc:Ignorable="d">
+
+	<ContentPage.BindingContext>
+		<vm:ChatModalViewModel />
+	</ContentPage.BindingContext>
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem x:Name="ToolbarDone" Text="Leave chat" />
+	</ContentPage.ToolbarItems>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<helpers:ChatTemplateSelector x:Key="MessageTemplateSelector" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<Grid
+		ColumnSpacing="0"
+		RowDefinitions="*,1,Auto"
+		RowSpacing="0">
+		<controls:ExtendedListView
+			x:Name="ChatList"
+			Grid.Row="0"
+			Margin="0"
+			FlowDirection="RightToLeft"
+			HasUnevenRows="True"
+			ItemAppearingCommand="{Binding MessageAppearingCommand}"
+			ItemDisappearingCommand="{Binding MessageDisappearingCommand}"
+			ItemTapped="OnListTapped"
+			ItemTemplate="{StaticResource MessageTemplateSelector}"
+			ItemsSource="{Binding Messages}"
+			Rotation="180"
+			SeparatorColor="Transparent"
+			VerticalOptions="FillAndExpand" />
+		<Frame
+			Grid.Row="0"
+			Margin="0,0,2,15"
+			Padding="1"
+			BackgroundColor="Transparent"
+			HasShadow="false"
+			HeightRequest="30"
+			HorizontalOptions="EndAndExpand"
+			IsVisible="{Binding ShowScrollTap, Mode=TwoWay}"
+			VerticalOptions="End"
+			WidthRequest="30">
+			<RelativeLayout>
+				<Label
+					FontFamily="{StaticResource FontAwesome}"
+					FontSize="32"
+					HeightRequest="30"
+					Text="{x:Static local:IconFont.ArrowAltCircleUp}"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="30" />
+				<Frame
+					Padding="1"
+					BackgroundColor="Transparent"
+					CornerRadius="25"
+					HasShadow="False"
+					HorizontalOptions="End"
+					IsVisible="{Binding PendingMessageCountVisible}"
+					Opacity="0.6"
+					VerticalOptions="Start">
+					<Label
+						BackgroundColor="Red"
+						HorizontalOptions="FillAndExpand"
+						Text="{Binding PendingMessageCount}"
+						TextColor="White"
+						VerticalOptions="FillAndExpand" />
+				</Frame>
+			</RelativeLayout>
+			<Frame.GestureRecognizers>
+				<TapGestureRecognizer Tapped="ScrollTap" />
+			</Frame.GestureRecognizers>
+		</Frame>
+		<BoxView
+			Grid.Row="1"
+			BackgroundColor="LightGray"
+			HeightRequest="1"
+			HorizontalOptions="FillAndExpand" />
+		<partials:ChatInputBarView
+			x:Name="chatInput"
+			Grid.Row="2"
+			Margin="0,0,10,0" />
+	</Grid>
+</ContentPage>

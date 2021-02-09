@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ViewCell
+	x:Class="XamarinSignalRChat.Views.Cells.RemoteUserViewCell"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	<Frame
+		Margin="80,10,10,10"
+		Padding="10"
+		BackgroundColor="Gray"
+		FlowDirection="LeftToRight"
+		HasShadow="false"
+		Rotation="180">
+		<StackLayout Orientation="Horizontal">
+			<Label FontSize="Micro" Text="{Binding User}" />
+			<Label Text="{Binding Message}" TextColor="White" />
+		</StackLayout>
+	</Frame>
+</ViewCell>

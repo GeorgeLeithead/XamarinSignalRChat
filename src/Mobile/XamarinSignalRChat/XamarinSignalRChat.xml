@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XamarinSignalRChat</name>
+    </assembly>
+    <members>
+        <member name="T:XamarinSignalRChat.App">
+            <summary>App constructor.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.App.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.App"/> class.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.App.UIParent">
+            <summary>Gets or sets the UI parent object.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.App.OnResume">
+            <inheritdoc/>
+        </member>
+        <member name="M:XamarinSignalRChat.App.OnSleep">
+            <inheritdoc/>
+        </member>
+        <member name="M:XamarinSignalRChat.App.OnStart">
+            <inheritdoc/>
+        </member>
+        <member name="T:XamarinSignalRChat.AppShell">
+            <summary>App shell.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.AppShell.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.AppShell"/> class.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Controls.ExtendedEditorControl">
+            <summary>Extended editor control.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Controls.ExtendedEditorControl.HasRoundedCornerProperty">
+            <summary>Gets or sets the HasRoundedCorner Property, and it is a bindable property.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Controls.ExtendedEditorControl.IsExpandableProperty">
+            <summary>Gets or sets the IsExpandable Property, and it is a bindable property.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Controls.ExtendedEditorControl.PlaceholderColorProperty">
+            <summary>Gets or sets the PlaceholderColor Property, and it is a bindable property.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Controls.ExtendedEditorControl.PlaceholderProperty">
+            <summary>Gets or sets the PlaceholderProperty Property, and it is a bindable property.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Controls.ExtendedEditorControl.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Controls.ExtendedEditorControl"/> class.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Controls.ExtendedEditorControl.Finalize">
+            <summary>Finalises an instance of the <see cref="T:XamarinSignalRChat.Controls.ExtendedEditorControl"/> class.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Controls.ExtendedEditorControl.HasRoundedCorner">
+            <summary>Gets or sets a value indicating whether the control has rounded corners.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Controls.ExtendedEditorControl.IsExpandable">
+            <summary>Gets or sets a value indicating whether the control is expandable.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Controls.ExtendedEditorControl.Placeholder">
+            <summary>Gets or sets the place holder.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Controls.ExtendedEditorControl.PlaceholderColor">
+            <summary>Gets or sets the place holder color.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Controls.ExtendedListView">
+            <summary>Extended list view controls with scroll to bottom.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Controls.ExtendedListView.ItemAppearingCommandProperty">
+            <summary>Gets or sets the ItemAppearingCommand Property, and it is a bindable property.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Controls.ExtendedListView.ItemDisappearingCommandProperty">
+            <summary>Gets or sets the ItemDisappearingCommand Property, and it is a bindable property.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Controls.ExtendedListView.TappedCommandProperty">
+            <summary>Gets or sets the TappedCommand Property, and it is a bindable property.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Controls.ExtendedListView.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Controls.ExtendedListView"/> class.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Controls.ExtendedListView.#ctor(Xamarin.Forms.ListViewCachingStrategy)">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Controls.ExtendedListView"/> class.</summary>
+            <param name="cachingStrategy">Cache strategy.</param>
+        </member>
+        <member name="P:XamarinSignalRChat.Controls.ExtendedListView.ItemAppearingCommand">
+            <summary>Gets or sets the Item appearing command.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Controls.ExtendedListView.ItemDisappearingCommand">
+            <summary>Gets or sets the item disappearing command.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Controls.ExtendedListView.TappedCommand">
+            <summary>Gets or sets the tapped command.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Controls.ExtendedListView.ScrollToFirst">
+            <summary>Scroll to fist item in list.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Controls.ExtendedListView.ScrollToLast">
+            <summary>Scroll to last item in list.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Helpers.ChatTemplateSelector">
+            <summary>Chat template selector helper.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Helpers.ChatTemplateSelector.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Helpers.ChatTemplateSelector"/> class.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Helpers.ChatTemplateSelector.OnSelectTemplate(System.Object,Xamarin.Forms.BindableObject)">
+            <inheritdoc/>
+        </member>
+        <member name="T:XamarinSignalRChat.Helpers.UserSettingsManager">
+            <summary>User settings manager.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Helpers.UserSettingsManager.DisplayName">
+            <summary>Gets or sets the user display name.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Helpers.UserSettingsManager.Group">
+            <summary>Gets or sets the chat group.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Helpers.UserSettingsManager.ChatServerIP">
+            <summary>Gets or sets the chat service address.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Helpers.UserSettingsManager.UseHttps">
+            <summary>Gets a value indicating whether to use HTTPS.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Interfaces.IDialogService">
+            <summary>Dialog service interface.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Interfaces.IDialogService.DisplayAlert(System.String,System.String,System.String,System.String)">
+            <summary>Display alert dialog.</summary>
+            <param name="title">Alert title.</param>
+            <param name="message">Alert message.</param>
+            <param name="accept">Accept button text.</param>
+            <param name="cancel">Cancel button text.</param>
+            <returns>Task{bool} accept or cancel.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.Interfaces.IDialogService.DisplayAlert(System.String,System.String,System.String)">
+            <summary>Display alert dialog.</summary>
+            <param name="title">Alert title.</param>
+            <param name="message">Alert message.</param>
+            <param name="cancel">Cancel button text.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:XamarinSignalRChat.Interfaces.IParentWindowLocatorService">
+            <summary>Simple platform specific service that is responsible for locating a parent window service.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Interfaces.IParentWindowLocatorService.GetCurrentParentWindow">
+            <summary>Get current parent window.</summary>
+            <returns>Current parent window object.</returns>
+        </member>
+        <member name="T:XamarinSignalRChat.Models.ChatMessage">
+            <summary>Chat message binable obbject.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Models.ChatMessage.Message">
+            <summary>Gets or sets a message.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Models.ChatMessage.User">
+            <summary>Gets or sets chat user name.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Models.ChatMessage.MessageDateTime">
+            <summary>Gets or sets message received datetime.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Services.DialogServices">
+            <summary>Dialog service.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Services.DialogServices.DisplayAlert(System.String,System.String,System.String)">
+            <summary>Display alert dialog.</summary>
+            <param name="title">Alert title.</param>
+            <param name="message">Alert message.</param>
+            <param name="cancel">Cancel button text.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.Services.DialogServices.DisplayAlert(System.String,System.String,System.String,System.String)">
+            <summary>Display alert dialog.</summary>
+            <param name="title">Alert title.</param>
+            <param name="message">Alert message.</param>
+            <param name="accept">Accept button text.</param>
+            <param name="cancel">Cancel button text.</param>
+            <returns>Task{bool} accept or cancel.</returns>
+        </member>
+        <member name="T:XamarinSignalRChat.IconFont">
+            <summary>Font Awesome icon glyphs.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Style.StyleSheetRegistrar">
+            <summary>Style sheet registrat.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Style.StyleSheetRegistrar.RegisterStyle(System.String,System.Type,System.String)">
+            <summary>Register style sheet.</summary>
+            <param name="name">Name of style sheet.</param>
+            <param name="targetType">Instance target type.</param>
+            <param name="bindablePropertyName">Bound property name.</param>
+        </member>
+        <member name="T:XamarinSignalRChat.ViewModels.Base.ExtendedBindableObject">
+            <summary>Extended bindable object class.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ViewModels.Base.ExtendedBindableObject.NotifyPropertyChanged``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>Notify property has changed.</summary>
+            <typeparam name="T">Property type.</typeparam>
+            <param name="property">Property changed.</param>
+        </member>
+        <member name="M:XamarinSignalRChat.ViewModels.Base.ExtendedBindableObject.GetMemberInfo(System.Linq.Expressions.Expression)">
+            <summary>Get member information.</summary>
+            <param name="expression">Expression member.</param>
+            <returns>Operand member.</returns>
+        </member>
+        <member name="T:XamarinSignalRChat.ViewModels.Base.ViewModelBase">
+            <summary>View model base class.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.ViewModels.Base.ViewModelBase.isBusy">
+            <summary>View is busy.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.ViewModels.Base.ViewModelBase.title">
+            <summary>View title.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ViewModels.Base.ViewModelBase.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.ViewModels.Base.ViewModelBase" /> class.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.Base.ViewModelBase.ChatService">
+            <summary>Gets the chat service dependency.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.Base.ViewModelBase.DialogService">
+            <summary>Gets the dialog service dependency.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.Base.ViewModelBase.IsBusy">
+            <summary>Gets or sets a value indicating whether the view is busy.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.Base.ViewModelBase.Title">
+            <summary>gets or sets a value for the view title.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ViewModels.Base.ViewModelBase.InitializeAsync(System.Object)">
+            <summary>Initialises the view model.</summary>
+            <param name="parameter">Initianlisation parameter.</param>
+            <returns>Task result.</returns>
+        </member>
+        <member name="T:XamarinSignalRChat.ViewModels.ChatModalViewModel">
+            <summary>Chat popup view model.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ViewModels.ChatModalViewModel.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.ViewModels.ChatModalViewModel"/> class.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.ConnectCommand">
+            <summary>Gets connect command.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.DelayedMessages">
+            <summary>Gets or sets a queue of delayed chat messages.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.DisconnectCommand">
+            <summary>Gets disconnect command.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.IsConnected">
+            <summary>Gets or sets a value indicating whether chat service is connected.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.LastMessageVisible">
+            <summary>Gets or sets a value indicating whether last message is visible.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.MessageAppearingCommand">
+            <summary>Gets or sets message appearing command.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.MessageDisappearingCommand">
+            <summary>Gets or sets message dissapearing command.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.Messages">
+            <summary>Gets or sets a collection of chat messages.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.OnSendCommand">
+            <summary>Gets or sets on send command.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.PendingMessageCount">
+            <summary>Gets or sets the pending message count.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.PendingMessageCountVisible">
+            <summary>Gets a value indicating whether the pending message count is visible.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.ShowScrollTap">
+            <summary>Gets or sets a value indicating whether to show scroll tap.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatModalViewModel.TextToSend">
+            <summary>Gets or sets message to send.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.ViewModels.ChatViewModel">
+            <summary>Chat view model.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ViewModels.ChatViewModel.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:XamarinSignalRChat.ViewModels.ChatViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.ChatViewModel.LaunchChatCommand">
+            <summary>Gets or sets launch chat command.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.ViewModels.SettingsViewModel">
+            <summary>Settings view model.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ViewModels.SettingsViewModel.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:XamarinSignalRChat.ViewModels.SettingsViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.SettingsViewModel.ChatEndPoint">
+            <summary>Gets or sets the chat service address.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.ViewModels.SettingsViewModel.DisplayName">
+            <summary>Gets or sets the chat display name.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Views.Cells.LocalUserViewCell">
+            <summary>Incoming chat view cell.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.Cells.LocalUserViewCell.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Views.Cells.LocalUserViewCell"/> class.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Views.Cells.RemoteUserViewCell">
+            <summary>Incoming chat view cell.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.Cells.RemoteUserViewCell.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Views.Cells.RemoteUserViewCell"/> class.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Views.ChatModalPage">
+            <summary>Chat modal page view.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.ChatModalPage.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Views.ChatModalPage"/> class.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.ChatModalPage.OnListTapped(System.Object,Xamarin.Forms.ItemTappedEventArgs)">
+            <summary>List tapped event.</summary>
+            <param name="sender">Object sender.</param>
+            <param name="e">Item tapped event arguments.</param>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.ChatModalPage.ScrollTap(System.Object,System.EventArgs)">
+            <summary>Scroll tapped event.</summary>
+            <param name="sender">Object sender.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.ChatModalPage.OnAppearing">
+            <inheritdoc/>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.ChatModalPage.OnDisappearing">
+            <inheritdoc/>
+        </member>
+        <member name="T:XamarinSignalRChat.Views.ChatPage">
+            <summary>Chat page view.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.ChatPage.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Views.ChatPage"/> class.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Views.Partials.ChatInputBarView">
+            <summary>Chat input bar view.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.Partials.ChatInputBarView.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Views.Partials.ChatInputBarView"/> class.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.Partials.ChatInputBarView.Handle_Completed(System.Object,System.EventArgs)">
+            <summary>Event handler for completed.</summary>
+            <param name="sender">Object sender.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.Partials.ChatInputBarView.UnFocusEntry">
+            <summary>Un-focus entry.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Views.SettingsPage">
+            <summary>Settings page.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.SettingsPage.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:XamarinSignalRChat.Views.SettingsPage"/> class.
+            </summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Views.SettingsPage.OnDisappearing">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

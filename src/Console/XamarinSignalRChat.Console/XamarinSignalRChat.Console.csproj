@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<Authors>George Leithead (InternetWideWorld.com)</Authors>
+		<LangVersion>8</LangVersion>
+		<Company>InternetWideWorld.com</Company>
+		<Description>Console application to use and test the SignalR chat service.</Description>
+		<RepositoryUrl>https://github.com/GeorgeLeithead/XamarinSignalRChat</RepositoryUrl>
+		<RepositoryType>Public</RepositoryType>
+		<PackageTags>SignalR; Console</PackageTags>
+		<Copyright>2021 InternetWideWorld.com</Copyright>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DocumentationFile>.\XamarinSignalRChat.Console.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
+		<AdditionalFiles Include="..\..\Settings.StyleCop" Link="Settings.StyleCop" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.2" />
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.Text.Encodings.Web" Version="5.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Shared\XamarinSignalRChat.Shared\XamarinSignalRChat.Shared.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XamarinSignalRChat.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:XamarinSignalRChat.Shared.ChatService">
+            <summary>Chat service.</summary>
+        </member>
+        <member name="E:XamarinSignalRChat.Shared.ChatService.OnConnectionClosed">
+            <summary>Event handler for connection closed.</summary>
+        </member>
+        <member name="E:XamarinSignalRChat.Shared.ChatService.OnEnteredOrExited">
+            <summary>Event handler for entered or exited.</summary>
+        </member>
+        <member name="E:XamarinSignalRChat.Shared.ChatService.OnReceivedMessage">
+            <summary>Event handler for received message.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.ChatService.ConnectAsync">
+            <summary>Connect to chat service.</summary>
+            <returns>Async task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.ChatService.DisconnectAsync">
+            <summary>Disconnect from chat service.</summary>
+            <returns>Async task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.ChatService.GetRooms">
+            <summary>Gets the available chat rooms.</summary>
+            <returns>List{string} of chat rooms.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.ChatService.Init(System.String,System.Boolean)">
+            <summary>Initialises chat service.</summary>
+            <param name="urlRoot">URL root of the chat service.</param>
+            <param name="useHttps">Indicates whether to use HTTPS; Otherwise use HTTP.</param>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.ChatService.JoinChannelAsync(System.String,System.String)">
+            <summary>User join a chat group.</summary>
+            <param name="group">Name of group to join.</param>
+            <param name="userName">Name of user to join.</param>
+            <returns>Async task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.ChatService.LeaveChannelAsync(System.String,System.String)">
+            <summary>User leave a chat group.</summary>
+            <param name="group">Name of group to leave.</param>
+            <param name="userName">Name of user to leave.</param>
+            <returns>Async task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.ChatService.SendMessageAsync(System.String,System.String,System.String)">
+            <summary>Send a chat message.</summary>
+            <param name="group">Name of group to send message.</param>
+            <param name="userName">Name of user sending message.</param>
+            <param name="message">Chat message.</param>
+            <returns>Async task.</returns>
+        </member>
+        <member name="T:XamarinSignalRChat.Shared.EventHandlers.IMessageEventArgs">
+            <summary>Message event arguments interface.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Shared.EventHandlers.IMessageEventArgs.Message">
+            <summary>Gets the Message for the event argument.</summary>
+        </member>
+        <member name="T:XamarinSignalRChat.Shared.EventHandlers.MessageEventArgs">
+            <summary>Message event arguments interface.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Shared.EventHandlers.MessageEventArgs.#ctor(System.String,System.String)">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.Shared.EventHandlers.MessageEventArgs" /> class.</summary>
+            <param name="message">Event message argument.</param>
+            <param name="user">Event user argument.</param>
+        </member>
+        <member name="P:XamarinSignalRChat.Shared.EventHandlers.MessageEventArgs.Message">
+            <summary>Gets the Message for the event argument.</summary>
+        </member>
+        <member name="P:XamarinSignalRChat.Shared.EventHandlers.MessageEventArgs.User">
+            <summary>Gets the User for the event argument.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,76 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+ branches:
+   include:
+     - main
+ paths:
+   include:
+     - src/BackEnd/XamarinSignalRChat.ChatService
+   exclude:
+     - AppCreationScripts
+     - Screenshots
+     - src
+     - Docs
+     - azure-pipelines.yml
+     - azure-pipelines-Android.yml
+     - azure-pipelines-ChatService.yml
+     - azure-pipelines-DocumentService.yml
+     - azure-pipelines-iOS.yml
+     - README.md
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  projectName: '**/*ChatService.csproj'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: 'restore'
+    restoreSolution: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: "dotnet build"
+  inputs:
+    command: 'build'
+    projects: '$(projectName)'
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: '$(projectName)'
+    configuration: '$(buildConfiguration)'
+    arguments: '--output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1    
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Deploy to Azure'
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'ENTER YOUR AZURE SUBSCRIPTION HERE'
+    appType: 'webApp'
+    WebAppName: 'ENTER YOUR AZURE APP NAME HERE'
+    packageForLinux: '$(build.artifactstagingdirectory)/**/*.zip'

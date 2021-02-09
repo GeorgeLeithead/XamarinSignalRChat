@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="XamarinSignalRChat.Views.ChatPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:vm="clr-namespace:XamarinSignalRChat.ViewModels"
+	Title="{Binding Title, Mode=OneTime}"
+	Shell.NavBarIsVisible="True"
+	Visual="Material"
+	mc:Ignorable="d">
+
+	<ContentPage.BindingContext>
+		<vm:ChatViewModel />
+	</ContentPage.BindingContext>
+
+	<Grid ColumnSpacing="0" RowSpacing="0">
+		<Frame
+			Margin="0"
+			Padding="0"
+			HasShadow="True"
+			HorizontalOptions="FillAndExpand">
+			<StackLayout Orientation="Vertical">
+				<Label Text="This is real-time chat " />
+				<Button Command="{Binding LaunchChatCommand}" Text="Enter real-time chat..." />
+			</StackLayout>
+		</Frame>
+
+		<ActivityIndicator
+			d:IsRunning="True"
+			d:IsVisible="True"
+			HorizontalOptions="CenterAndExpand"
+			IsRunning="{Binding IsBusy}"
+			IsVisible="{Binding IsBusy}"
+			VerticalOptions="CenterAndExpand" />
+	</Grid>
+</ContentPage>

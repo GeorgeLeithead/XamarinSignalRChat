@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XamarinSignalRChat.Console</name>
+    </assembly>
+    <members>
+        <member name="T:XamarinSignalRChat.Console.Program">
+            <summary>Console application program.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Console.Program.name">
+            <summary>Name of chat user.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Console.Program.room">
+            <summary>Name of room to join.</summary>
+        </member>
+        <member name="F:XamarinSignalRChat.Console.Program.service">
+            <summary>Chat service.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.Console.Program.Main(System.String[])">
+            <summary>Main method.</summary>
+            <param name="args">Application arguments.</param>
+            <returns>Async Task.</returns>
+        </member>
+    </members>
+</doc>

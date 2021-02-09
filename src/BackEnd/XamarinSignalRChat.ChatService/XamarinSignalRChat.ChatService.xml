@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XamarinSignalRChat.ChatService</name>
+    </assembly>
+    <members>
+        <member name="T:XamarinSignalRChat.ChatService.Hubs.ChatHub">
+            <summary>SignalR chat hub.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Hubs.ChatHub.AddToGroup(System.String,System.String)">
+            <summary>Add chat user to group.</summary>
+            <param name="groupName">Name of group.</param>
+            <param name="user">Name of user.</param>
+            <returns>Async task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Hubs.ChatHub.RemoveFromGroup(System.String,System.String)">
+            <summary>Remove chat user from group.</summary>
+            <param name="groupName">Name of group.</param>
+            <param name="user">Name of user.</param>
+            <returns>Async task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Hubs.ChatHub.SendMessageAll(System.String,System.String)">
+            <summary>Send message to all users.</summary>
+            <param name="user">Name of user.</param>
+            <param name="message">Chat message.</param>
+            <returns>Async task.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Hubs.ChatHub.SendMessageGroup(System.String,System.String,System.String)">
+            <summary>Send message to group from a user.</summary>
+            <param name="groupName">Name of group.</param>
+            <param name="user">Name of user.</param>
+            <param name="message">Chat message.</param>
+            <returns>Async task.</returns>
+        </member>
+        <member name="T:XamarinSignalRChat.ChatService.Program">
+            <summary>On startup the app builds a host.  The host encapsulates all of the application resources.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Program.CreateWebHostBuilder(System.String[])">
+            <summary>This method gets called by the runtime. Use this method to configure a host with a set of default options.</summary>
+            <param name="args">Creation arguments.</param>
+            <returns>IHostBuilder interface.</returns>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Program.Main(System.String[])">
+            <summary>This method gets called by the runtime. Use this method to build a .NET generic host.</summary>
+            <param name="args">Application arguments.</param>
+        </member>
+        <member name="T:XamarinSignalRChat.ChatService.Startup">
+            <summary>Service startup where services required by the app are configured and the request handling pipeline is defined as a series of middleware components.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Initialises a new instance of the <see cref="T:XamarinSignalRChat.ChatService.Startup" /> class.</summary>
+            <param name="configuration">Service configuration.</param>
+        </member>
+        <member name="P:XamarinSignalRChat.ChatService.Startup.Configuration">
+            <summary>Gets the service configuration.</summary>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</summary>
+            <param name="app">Application builder.</param>
+            <param name="env">Web host environment.</param>
+        </member>
+        <member name="M:XamarinSignalRChat.ChatService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>This method gets called by the runtime. Use this method to add services to the container.</summary>
+            <param name="services">Service collection.</param>
+        </member>
+    </members>
+</doc>

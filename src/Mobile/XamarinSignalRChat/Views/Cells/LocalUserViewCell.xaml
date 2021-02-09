@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ViewCell
+	x:Class="XamarinSignalRChat.Views.Cells.LocalUserViewCell"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	<Frame
+		Margin="10,10,80,10"
+		Padding="10"
+		BackgroundColor="LightBlue"
+		FlowDirection="LeftToRight"
+		HasShadow="false"
+		Rotation="180">
+		<Label Text="{Binding Message}" />
+	</Frame>
+</ViewCell>

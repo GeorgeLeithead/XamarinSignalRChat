@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+	  <Authors>George Leithead (InternetWideWorld.com)</Authors>
+	  <Company>InternetWideWorld.com</Company>
+	  <Description>Xamarin.Forms PCL project for SignalR chat project.</Description>
+	  <Copyright>2021 InternetWideWorld.com</Copyright>
+	  <RepositoryUrl>https://github.com/GeorgeLeithead/XamarinSignalRChat</RepositoryUrl>
+	  <RepositoryType>Public</RepositoryType>
+	  <PackageTags>SignalR; Xamarin.Forms; Xamarin.Android; Xamarin.iOS</PackageTags>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>.\XamarinSignalRChat.xml</DocumentationFile>
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Style\fa-solid-900.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
+		<AdditionalFiles Include="..\..\Settings.StyleCop" Link="Settings.StyleCop" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\XamarinSignalRChat.Shared\XamarinSignalRChat.Shared.csproj" />
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<EmbeddedResource Update="AppShell.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Style\GlobalStyles.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

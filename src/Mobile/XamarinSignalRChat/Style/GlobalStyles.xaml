@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:XamarinSignalRChat">
+
+	<!--  Fonts  -->
+	<OnPlatform x:Key="FontAwesome" x:TypeArguments="x:String">
+		<On Platform="Android" Value="fa-solid-900.ttf#Font Awesome 5 Free Solid" />
+		<On Platform="iOS" Value="fa-solid-900" />
+	</OnPlatform>
+
+	<!--  Colors  -->
+	<Color x:Key="PrimaryColor">#5561F9</Color>
+	<Color x:Key="TextOnLightColor">#1d1d1d</Color>
+	<Color x:Key="TextOnDarkColor">#FFFFFF</Color>
+	<Color x:Key="ColorTabIcon">Black</Color>
+	<Color x:Key="ColorTabSelectedIcon">Red</Color>
+
+	<!--  Sizes  -->
+	<x:Double x:Key="SizeTabIcon">24</x:Double>
+
+	<FontImageSource
+		x:Key="IconSettings"
+		FontFamily="{StaticResource FontAwesome}"
+		Glyph="{x:Static local:IconFont.Cog}"
+		Size="18"
+		Color="White" />
+
+	<FontImageSource
+		x:Key="IconChat"
+		FontFamily="{StaticResource FontAwesome}"
+		Glyph="{x:Static local:IconFont.Comment}"
+		Size="18"
+		Color="White" />
+
+	<!--  Shell  -->
+	<Style x:Key="BaseStyle" TargetType="Element">
+		<Setter Property="Shell.BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+		<Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Dark=#1d1d1d, Light=#FFFFFF}" />
+		<Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light=#1d1d1d, Dark=#FFFFFF}" />
+		<Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+		<Setter Property="Shell.UnselectedColor" Value="#CC0000" />
+		<Setter Property="Shell.NavBarHasShadow" Value="False" />
+	</Style>
+</ResourceDictionary>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+	x:Class="XamarinSignalRChat.AppShell"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:views="clr-namespace:XamarinSignalRChat.Views"
+	Shell.FlyoutBehavior="Disabled"
+	Shell.NavBarHasShadow="True"
+	Visual="Material">
+
+	<!--  TabBar  -->
+	<TabBar>
+		<Tab
+			Title="Chat"
+			Icon="{StaticResource IconChat}"
+			Route="news">
+			<ShellContent ContentTemplate="{DataTemplate views:ChatPage}" />
+		</Tab>
+		<Tab
+			Title="Settings"
+			Icon="{StaticResource IconSettings}"
+			Route="settings">
+			<ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+		</Tab>
+	</TabBar>
+</Shell>

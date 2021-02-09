@@ -1,0 +1,67 @@
+# Xamarin.Android
+# Build a Xamarin.Android project.
+# Add steps that test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
+
+trigger:
+ branches:
+   include:
+     - main
+ paths:
+   include:
+     - src/Mobile
+     - src/Shared
+   exclude:
+     - AppCreationScripts
+     - Screenshots
+     - src
+     - Docs
+     - azure-pipelines.yml
+     - azure-pipelines-Android.yml
+     - azure-pipelines-ChatService.yml
+     - azure-pipelines-DocumentService.yml
+     - azure-pipelines-iOS.yml
+     - README.md
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '**/*.sln'
+
+- task: XamarinAndroid@1
+  displayName: "Build Xamarin.Android"
+  inputs:
+    projectFile: '**/*Android.csproj'
+    outputDirectory: '$(outputDirectory)'
+    configuration: '$(buildConfiguration)'
+    msbuildVersionOption: latest
+    jdkVersionOption: default
+
+- task: AndroidSigning@3
+  displayName: "Signing and aligning APK file"
+  inputs:
+    apkFiles: '$(outputDirectory)/*.apk'
+    apksignerKeystoreFile: '$(keystore-filename)'
+    apksignerKeystorePassword: '$(keystore-password)'
+    apksignerKeystoreAlias: '$(keystore-alias)'
+    apksignerKeyPassword: '$(keystore-password)'
+
+- task: ArchiveFiles@2
+  displayName: 'Archive'
+  inputs:
+    rootFolderOrFile: '$(outputDirectory)'
+    includeRootFolder: false
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(outputDirectory)'
