@@ -3,6 +3,7 @@
 # Add steps that test, sign, and distribute an app, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
 
+# Trigger on the main brach, and filtered to only the Mobile and Shared projects
 trigger:
  branches:
    include:
@@ -12,14 +13,12 @@ trigger:
      - src/Mobile
      - src/Shared
    exclude:
-     - AppCreationScripts
      - Screenshots
      - src
      - Docs
      - azure-pipelines.yml
      - azure-pipelines-Android.yml
      - azure-pipelines-ChatService.yml
-     - azure-pipelines-DocumentService.yml
      - azure-pipelines-iOS.yml
      - README.md
 
@@ -31,12 +30,16 @@ variables:
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
+# Install NuGet tool
 - task: NuGetToolInstaller@1
 
+# Restore NuGet packages
 - task: NuGetCommand@2
+  displayName: 'dotnet restore'
   inputs:
     restoreSolution: '**/*.sln'
 
+# Build the Android project
 - task: XamarinAndroid@1
   displayName: "Build Xamarin.Android"
   inputs:
@@ -46,6 +49,7 @@ steps:
     msbuildVersionOption: latest
     jdkVersionOption: default
 
+# Sign the APK
 - task: AndroidSigning@3
   displayName: "Signing and aligning APK file"
   inputs:
@@ -55,12 +59,14 @@ steps:
     apksignerKeystoreAlias: '$(keystore-alias)'
     apksignerKeyPassword: '$(keystore-password)'
 
+# Archive the APK and associated files
 - task: ArchiveFiles@2
   displayName: 'Archive'
   inputs:
     rootFolderOrFile: '$(outputDirectory)'
     includeRootFolder: false
 
+# Create a drop artefact for the project
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   inputs:

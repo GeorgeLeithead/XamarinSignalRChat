@@ -3,6 +3,7 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+# Trigger on the main brach, and filtered to only the Chat Service
 trigger:
  branches:
    include:
@@ -11,14 +12,12 @@ trigger:
    include:
      - src/BackEnd/XamarinSignalRChat.ChatService
    exclude:
-     - AppCreationScripts
      - Screenshots
      - src
      - Docs
      - azure-pipelines.yml
      - azure-pipelines-Android.yml
      - azure-pipelines-ChatService.yml
-     - azure-pipelines-DocumentService.yml
      - azure-pipelines-iOS.yml
      - README.md
 
@@ -32,25 +31,30 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+# Install NuGet tool
 - task: NuGetToolInstaller@1
 
+# Restore NuGet packages
 - task: NuGetCommand@2
   displayName: 'dotnet restore'
   inputs:
     command: 'restore'
     restoreSolution: '$(solution)'
 
+# Build the project
 - task: DotNetCoreCLI@2
   displayName: "dotnet build"
   inputs:
     command: 'build'
     projects: '$(projectName)'
 
+# Run any tests
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+# Publish project
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish'
   inputs:
@@ -61,16 +65,18 @@ steps:
     arguments: '--output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
 
+# Create a drop artefact for the project
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
 
-- task: AzureRmWebAppDeployment@4
-  displayName: 'Deploy to Azure'
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'ENTER YOUR AZURE SUBSCRIPTION HERE'
-    appType: 'webApp'
-    WebAppName: 'ENTER YOUR AZURE APP NAME HERE'
-    packageForLinux: '$(build.artifactstagingdirectory)/**/*.zip'
+# Deploy to Azure, uncomment the below and add your Subscription and web app name
+#- task: AzureRmWebAppDeployment@4
+#  displayName: 'Deploy to Azure'
+#  inputs:
+#    ConnectionType: 'AzureRM'
+#    azureSubscription: 'ENTER YOUR AZURE SUBSCRIPTION HERE'
+#    appType: 'webApp'
+#    WebAppName: 'ENTER YOUR AZURE APP NAME HERE'
+#    packageForLinux: '$(build.artifactstagingdirectory)/**/*.zip'
